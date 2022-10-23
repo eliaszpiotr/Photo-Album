@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Photo, Category
 
 
@@ -19,4 +19,21 @@ def photoView(request, pk):
 
 
 def photoUpload(request):
-    return render(request, 'album/upload.html')
+    categories = Category.objects.all()
+
+    if request.method == 'POST':
+        data = request.POST
+        image = request.FILES.get('image')
+
+        if data['category'] != 'none':
+            category = Category.objects.get(id=data['category'])
+        elif data['category_new'] != '':
+            category, created = Category.objects.get_or_create(name=data['category_new'])
+        else:
+            category = None
+
+        Photo.objects.create(category=category, description=data['description'], image=image)
+
+        return redirect('album')
+
+    return render(request, 'album/upload.html', {'categories': categories})

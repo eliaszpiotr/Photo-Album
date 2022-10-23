@@ -13,7 +13,7 @@
     <div class="row">
 
         <div class="col-md-3">
-            <div class="card" style="width: 18rem;">
+            <div class="card">
                 <div class="card-header">
                     Categories
                 </div>
@@ -31,13 +31,13 @@
             <div class="row m-2">
                 {% for photo in photos %}
                 <div class="col-md-4">
-                    <div class="card my-2" style="width: 18rem;">
-                        <img class="rounded" style="margin: 15px;"
+                    <div class="card my-2" style="max-height: 379px; max-width: 288px;">
+                        <img class="rounded" style="margin: 15px; max-height: 224px; max-width: 256px"
                              src="{{photo.image.url}}"
                              class="card-img-top" alt="">
                         <div class="card-body justify-content-center">
-                            <p class="card-text">
-                                <a style="color: black" href="{% url 'photo' photo.id %}">Charcik rosyjski borzoj</a>
+                            <p class="card-text ">
+                                <a style="color: black;" href="{% url 'photo' photo.id %}">{{photo.description}}</a>
                             </p>
                         </div>
                     </div>
