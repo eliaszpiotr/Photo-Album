@@ -6,7 +6,7 @@ def album(request):
     return render(request, 'album/album.html')
 
 
-def photoView(request):
+def photoView(request, pk):
     return render(request, 'album/photo.html')
 
 
