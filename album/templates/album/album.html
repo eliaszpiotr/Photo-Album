@@ -19,8 +19,9 @@
                 </div>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">All</li>
-                    <li class="list-group-item">A second item</li>
-                    <li class="list-group-item">A third item</li>
+                    {% for category in categories %}
+                    <li class="list-group-item">{{category.name}}</li>
+                    {% endfor %}
                     <a href="{% url 'upload' %}" class="btn btn-dark btn-sm m-2">Add Photo</a>
                 </ul>
             </div>
@@ -28,11 +29,11 @@
 
         <div class="col-md-9">
             <div class="row m-2">
-
+                {% for photo in photos %}
                 <div class="col-md-4">
                     <div class="card my-2" style="width: 18rem;">
-                        <img class="img-fluid" style="margin: 10px;"
-                             src="https://upload.wikimedia.org/wikipedia/commons/d/de/Chart_rosyjski_borzoj_rybnik-kamien_pl.jpg"
+                        <img class="rounded" style="margin: 15px;"
+                             src="{{photo.image.url}}"
                              class="card-img-top" alt="">
                         <div class="card-body justify-content-center">
                             <p class="card-text">
@@ -41,35 +42,9 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="col-md-4">
-                    <div class="card my-2" style="width: 18rem;">
-                        <img class="img-fluid" style="margin: 10px; "
-                             src="https://weterynarianews.pl/wp-content/uploads/2015/02/fotolia_73658761_subscription_monthly_xxl.jpg"
-                             class="card-img-top" alt="">
-                        <div class="card-body justify-content-center">
-                            <p class="card-text">
-                                <a style="color: black" href="{% url 'photo' 1 %}">Charcik rosyjski borzoj</a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="card my-2" style="width: 18rem;">
-                        <img class="img-fluid" style="margin: 10px;"
-                             src="https://upload.wikimedia.org/wikipedia/commons/d/de/Chart_rosyjski_borzoj_rybnik-kamien_pl.jpg"
-                             class="card-img-top" alt="">
-                        <div class="card-body justify-content-center">
-                            <p class="card-text">
-                                <a style="color: black" href="{% url 'photo' 1 %}">Charcik rosyjski borzoj</a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-
-
+                {% empty %}
+                <h3>No photos...</h3>
+                {% endfor %}
 
             </div>
         </div>
