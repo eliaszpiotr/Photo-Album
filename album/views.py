@@ -4,7 +4,12 @@ from .models import Photo, Category
 
 # Create your views here.
 def album(request):
-    photos = Photo.objects.all()
+    category = request.GET.get('category')
+    if category == None:
+        photos = Photo.objects.all()
+    else:
+        photos = Photo.objects.filter(category__name=category)
+
     categories = Category.objects.all()
     context = {
         'photos': photos,

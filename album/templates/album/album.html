@@ -18,9 +18,13 @@
                     Categories
                 </div>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item">All</li>
+                    <li class="list-group-item">
+                        <a href="{% url 'album' %}" style="text-decoration: none; color: black">All</a>
+                    </li>
                     {% for category in categories %}
-                    <li class="list-group-item">{{category.name}}</li>
+                    <li class="list-group-item">
+                        <a href="{% url 'album' %}?category={{category.name}}" style="text-decoration: none; color: black">{{category.name}}</a>
+                    </li>
                     {% endfor %}
                     <a href="{% url 'upload' %}" class="btn btn-dark btn-sm m-2">Add Photo</a>
                 </ul>
@@ -31,8 +35,8 @@
             <div class="row m-2">
                 {% for photo in photos %}
                 <div class="col-md-4">
-                    <div class="card my-2" style="max-height: 379px; max-width: 288px;">
-                        <img class="rounded" style="margin: 15px; max-height: 224px; max-width: 256px"
+                    <div class="card my-2" style="max-height: 379px ; max-width: 288px;">
+                        <img class="rounded" style="margin: 15px; height: 224px; width: 256px; object-fit: cover;"
                              src="{{photo.image.url}}"
                              class="card-img-top" alt="">
                         <div class="card-body justify-content-center">
