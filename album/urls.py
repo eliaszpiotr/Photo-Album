@@ -3,6 +3,6 @@ from .views import album, photoView, photoUpload
 
 urlpatterns = [
     path('', album, name='album'),
-    path('photo/<int:pk>', photoView, name='photo'),
+    path('photo/<str:pk>', photoView, name='photo'),
     path('upload/', photoUpload, name='upload'),
 ]

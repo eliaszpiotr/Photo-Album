@@ -15,7 +15,7 @@ def album(request):
 
 def photoView(request, pk):
     photo = Photo.objects.get(id=pk)
-    return render(request, 'album/photo.html')
+    return render(request, 'album/photo.html', {'photo': photo})
 
 
 def photoUpload(request):
