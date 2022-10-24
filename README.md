@@ -8,8 +8,9 @@ of popular Polaroids. The project was made in the Django framework.
 * The application gives us the option of logging in or registering 
 a new account.
 
-* Your password must contain a capital letter and a special character!! (example: username-test, password-Pass123!)
 ![Screenshot](screens/login.png) 
+
+* Your password must contain a capital letter and a special character!! (example: username-test, password-Pass123!)
 
 ![Screenshot](screens/register.png)
 
