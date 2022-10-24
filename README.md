@@ -5,10 +5,13 @@ An application for sharing photos with friends in the form
 of popular Polaroids. The project was made in the Django framework.
 
 # Login/ Register new account
-The application gives us the option of logging in or registering 
+* The application gives us the option of logging in or registering 
 a new account.
 
-![Screenshot](screens/login.png) ![Screenshot](screens/register.png)
+* Your password must contain a capital letter and a special character!! (example: username-test, password-Pass123!)
+![Screenshot](screens/login.png) 
+
+![Screenshot](screens/register.png)
 
 # Home page
 You have the option of sending photos that will appear on the main page and after clicking on the description, the full image will be displayed to us. You can see in the menu all categories that have already been created. You can also filter photos by category.
