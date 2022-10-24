@@ -1,3 +1,3 @@
 # Photo Album
 
-![Screenshot](login.png)
+![Screenshot](screens/login.png)
