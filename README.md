@@ -33,7 +33,7 @@ django-storages
 pip install python-dotenv
 ```
 
-Connecting to the database in the settings.py file
+* Connecting to the database in the settings.py file
 Imports:
 ```python
 from pathlib import Path
@@ -41,7 +41,7 @@ from dotenv import load_dotenv
 import os
 ```
 
-Installed apps:
+* Installed apps:
 ```python
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'album.apps.AlbumConfig',   
 ]
 ```
+* Add this at the bottom
 ```python
 load_dotenv()
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
@@ -65,7 +66,7 @@ AWS_QUERYSTRING_AUTH = False
 
 Here ```os.getenv('AWS_ACCESS_KEY_ID')``` yoy can pass your keys or if you want keep them hidden you have to create .env folder and put sensitive data in it.
 
-.env.example
+* .env.example
 ```python
 AWS_ACCESS_KEY_ID=
 AWS_SECRET_ACCESS_KEY=
